@@ -19,7 +19,9 @@ It is read-first by design: any button that would publish, send, like, connect o
 11. [Troubleshooting](#troubleshooting)
 12. [Known limits](#known-limits)
 13. [File layout](#file-layout)
-14. [Tests](#tests)
+14. [Use it as a Claude Code skill](#use-it-as-a-claude-code-skill)
+15. [Tests](#tests)
+16. [License](#license)
 
 ## How it works
 
@@ -451,7 +453,20 @@ For read-only DOM work without the agent: `open_page(url)`, then `settle(browser
 | `bench_results.json` | Output of the last fastbrowse benchmark run |
 | `bench_claude_in_chrome.json` | Measured Claude in Chrome runs on the same tasks |
 | `test_*.py` | Tests (no Chrome needed) |
+| `skills/fastbrowse/SKILL.md` | Claude Code skill: when and how an agent should use these tools |
+| `LICENSE` | MIT |
 | `pyproject.toml`, `uv.lock` | Pinned dependencies |
+
+## Use it as a Claude Code skill
+
+The repo ships a skill (`skills/fastbrowse/SKILL.md`) that tells a Claude Code agent which tool to use, the preflight checks and the mandatory safety rules (read first, never publish without you, one run at a time).
+
+```bash
+mkdir -p ~/.claude/skills
+ln -s "$PWD/skills/fastbrowse" ~/.claude/skills/fastbrowse
+```
+
+Run that from the repo root. The skill assumes commands run from the repo root, so tell the agent where you cloned it.
 
 ## Tests
 
@@ -460,3 +475,7 @@ uv run pytest -q
 ```
 
 The tests need neither Chrome nor Ollama.
+
+## License
+
+MIT. See [LICENSE](LICENSE).
