@@ -84,14 +84,42 @@ Reading the numbers:
 - The first run after Ollama has been idle was slower (one trial run took 8 s to load the model). The table above is steady state.
 - The veto task is a pass only when the run ends with `reason: vetoed` and no click was made.
 
-Screenshot-loop comparison (an estimate, not a measurement):
+### fastbrowse vs Claude in Chrome
 
-| Task | Steps | Image tokens a screenshot loop would send |
+Same fixture site, same two tasks, same machine, 2026-10-02. Claude in Chrome was driven by an agent with its screenshot path (screenshot at 0.5 scale, click by coordinates, verify with `get_page_text`). Raw rows: `bench_claude_in_chrome.json`.
+
+| | fastbrowse | Claude in Chrome |
 |---|---|---|
-| one-hop | 1 | 1,365 |
-| two-hop | 3 | 4,095 |
+| one-hop, median wall time | 0.81 s (10 runs) | 7.33 s (3 runs) |
+| two-hop, median wall time | 0.96 s (10 runs) | 10.80 s (3 runs) |
+| one-hop, tool calls / model turns | in-process, 1 planner call | 4 calls / 2 turns |
+| two-hop, tool calls / model turns | in-process, 1 planner call | 6 calls / 3 turns |
+| one-hop, tokens | 479 local, 0 external | about 542 in tool results (estimate), billed |
+| two-hop, tokens | 488 local, 0 external | about 951 in tool results (estimate), billed |
+| Pass rate on the tasks | 10/10 and 10/10 | 3/3 and 3/3 by screenshot path |
+| Stops dangerous clicks before they happen | Yes (veto) | No built-in veto |
 
-The estimate uses one 1280x800 screenshot per step at width x height / 750 tokens, the commonly published rule for Claude image input. It counts image tokens only, so it is a lower bound. Those tokens would go to an external model and be billed. fastbrowse sends none.
+Speed: fastbrowse was about 9x faster on one-hop and about 11x on two-hop.
+
+How to read the token rows:
+
+- fastbrowse tokens are measured at the Ollama proxy and are local, so they cost nothing per call.
+- Claude in Chrome tokens are an estimate from tool-result sizes: images at width x height / 750 (a 784x340 screenshot is about 355 tokens), text at characters / 4. They exclude the agent's own output tokens and the re-reading of earlier turns, so real billed usage is higher than shown.
+- The two columns measure different things. One is local planner tokens with no bill, the other is external input that is billed.
+
+What the Claude in Chrome runs showed beyond the numbers:
+
+- The `find` plus click-by-`ref` path reported "Clicked" twice and the page did not navigate either time (0 of 2). One read in the middle of that failed because the extension disconnected. The coordinate path from a screenshot worked every time (6 of 6).
+- A click result does not confirm the navigation. The tab info in the result was stale, so every run needed a separate read to verify.
+
+Fairness notes:
+
+- Claude in Chrome wall time includes the agent's model round trips, which is what an agent loop really costs. fastbrowse plans in-process.
+- fastbrowse wall time includes starting and stopping headless Chrome. Claude in Chrome used an already open Chrome.
+- 10 runs vs 3 runs, on a tiny local page. Treat the ratios as an order of magnitude, not a precise figure.
+- Claude in Chrome is the better tool when you need screenshots, complex pages, uploads or a side effect on purpose. fastbrowse is for fast, read-first, vetoable work.
+
+To reproduce the Claude in Chrome side: serve the fixture with `uv run python -c "import bench,time; bench.serve(bench.Site,8791); time.sleep(900)"`, then run each task through the Claude in Chrome tools while stamping `date +%s%N` before and after.
 
 Limits of this benchmark:
 
@@ -371,7 +399,8 @@ For read-only DOM work without the agent: `open_page(url)`, then `settle(browser
 | `engage.py` | Prepare a comment without posting it |
 | `linkedin.py` | LinkedIn text parser |
 | `bench.py` | Benchmark: speed, pass rate, measured token consumption |
-| `bench_results.json` | Output of the last benchmark run |
+| `bench_results.json` | Output of the last fastbrowse benchmark run |
+| `bench_claude_in_chrome.json` | Measured Claude in Chrome runs on the same tasks |
 | `test_*.py` | Tests (no Chrome needed) |
 | `pyproject.toml`, `uv.lock` | Pinned dependencies |
 
