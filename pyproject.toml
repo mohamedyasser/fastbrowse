@@ -1,0 +1,18 @@
+[project]
+name = "flowfy-browse"
+version = "0.1.0"
+description = "Fast, vetoable, read-first browsing for the Flowfy prospect agent (fastbrowse + LinkedIn tools)."
+requires-python = ">=3.12"
+dependencies = [
+    "laya-ultrafast @ git+https://github.com/ipenywis/laya-ultrafast@571431b7d142d54f49ad962d9d083d9b7bb20040",
+]
+
+[dependency-groups]
+dev = ["pytest>=8.4,<9"]
+
+[tool.uv]
+package = false
+
+[tool.pytest.ini_options]
+testpaths = ["."]
+python_files = ["test_*.py"]

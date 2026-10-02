@@ -1,0 +1,519 @@
+{
+  "rows": [
+    {
+      "task": "one-hop",
+      "ok": true,
+      "reason": "success",
+      "steps": 1,
+      "wall_ms": 1742,
+      "agent_ms": 395,
+      "prompt_tokens": 453,
+      "completion_tokens": 26,
+      "planner_calls": 1,
+      "trail": [
+        "Pricing"
+      ],
+      "error": null,
+      "run": 0
+    },
+    {
+      "task": "one-hop",
+      "ok": true,
+      "reason": "success",
+      "steps": 1,
+      "wall_ms": 926,
+      "agent_ms": 495,
+      "prompt_tokens": 453,
+      "completion_tokens": 26,
+      "planner_calls": 1,
+      "trail": [
+        "Pricing"
+      ],
+      "error": null,
+      "run": 1
+    },
+    {
+      "task": "one-hop",
+      "ok": true,
+      "reason": "success",
+      "steps": 1,
+      "wall_ms": 738,
+      "agent_ms": 305,
+      "prompt_tokens": 453,
+      "completion_tokens": 26,
+      "planner_calls": 1,
+      "trail": [
+        "Pricing"
+      ],
+      "error": null,
+      "run": 2
+    },
+    {
+      "task": "one-hop",
+      "ok": true,
+      "reason": "success",
+      "steps": 1,
+      "wall_ms": 753,
+      "agent_ms": 316,
+      "prompt_tokens": 453,
+      "completion_tokens": 26,
+      "planner_calls": 1,
+      "trail": [
+        "Pricing"
+      ],
+      "error": null,
+      "run": 3
+    },
+    {
+      "task": "one-hop",
+      "ok": true,
+      "reason": "success",
+      "steps": 1,
+      "wall_ms": 762,
+      "agent_ms": 322,
+      "prompt_tokens": 453,
+      "completion_tokens": 26,
+      "planner_calls": 1,
+      "trail": [
+        "Pricing"
+      ],
+      "error": null,
+      "run": 4
+    },
+    {
+      "task": "one-hop",
+      "ok": true,
+      "reason": "success",
+      "steps": 1,
+      "wall_ms": 833,
+      "agent_ms": 400,
+      "prompt_tokens": 453,
+      "completion_tokens": 26,
+      "planner_calls": 1,
+      "trail": [
+        "Pricing"
+      ],
+      "error": null,
+      "run": 5
+    },
+    {
+      "task": "one-hop",
+      "ok": true,
+      "reason": "success",
+      "steps": 1,
+      "wall_ms": 809,
+      "agent_ms": 357,
+      "prompt_tokens": 453,
+      "completion_tokens": 26,
+      "planner_calls": 1,
+      "trail": [
+        "Pricing"
+      ],
+      "error": null,
+      "run": 6
+    },
+    {
+      "task": "one-hop",
+      "ok": true,
+      "reason": "success",
+      "steps": 1,
+      "wall_ms": 840,
+      "agent_ms": 400,
+      "prompt_tokens": 453,
+      "completion_tokens": 26,
+      "planner_calls": 1,
+      "trail": [
+        "Pricing"
+      ],
+      "error": null,
+      "run": 7
+    },
+    {
+      "task": "one-hop",
+      "ok": true,
+      "reason": "success",
+      "steps": 1,
+      "wall_ms": 805,
+      "agent_ms": 373,
+      "prompt_tokens": 453,
+      "completion_tokens": 26,
+      "planner_calls": 1,
+      "trail": [
+        "Pricing"
+      ],
+      "error": null,
+      "run": 8
+    },
+    {
+      "task": "one-hop",
+      "ok": true,
+      "reason": "success",
+      "steps": 1,
+      "wall_ms": 726,
+      "agent_ms": 294,
+      "prompt_tokens": 453,
+      "completion_tokens": 26,
+      "planner_calls": 1,
+      "trail": [
+        "Pricing"
+      ],
+      "error": null,
+      "run": 9
+    },
+    {
+      "task": "two-hop",
+      "ok": true,
+      "reason": "success",
+      "steps": 3,
+      "wall_ms": 1059,
+      "agent_ms": 622,
+      "prompt_tokens": 457,
+      "completion_tokens": 31,
+      "planner_calls": 1,
+      "trail": [
+        "Docs",
+        "Wait for the page to update",
+        "Quickstart"
+      ],
+      "error": null,
+      "run": 0
+    },
+    {
+      "task": "two-hop",
+      "ok": true,
+      "reason": "success",
+      "steps": 3,
+      "wall_ms": 1177,
+      "agent_ms": 721,
+      "prompt_tokens": 457,
+      "completion_tokens": 31,
+      "planner_calls": 1,
+      "trail": [
+        "Docs",
+        "Wait for the page to update",
+        "Quickstart"
+      ],
+      "error": null,
+      "run": 1
+    },
+    {
+      "task": "two-hop",
+      "ok": true,
+      "reason": "success",
+      "steps": 3,
+      "wall_ms": 939,
+      "agent_ms": 506,
+      "prompt_tokens": 457,
+      "completion_tokens": 31,
+      "planner_calls": 1,
+      "trail": [
+        "Docs",
+        "Wait for the page to update",
+        "Quickstart"
+      ],
+      "error": null,
+      "run": 2
+    },
+    {
+      "task": "two-hop",
+      "ok": true,
+      "reason": "success",
+      "steps": 3,
+      "wall_ms": 927,
+      "agent_ms": 495,
+      "prompt_tokens": 457,
+      "completion_tokens": 31,
+      "planner_calls": 1,
+      "trail": [
+        "Docs",
+        "Wait for the page to update",
+        "Quickstart"
+      ],
+      "error": null,
+      "run": 3
+    },
+    {
+      "task": "two-hop",
+      "ok": true,
+      "reason": "success",
+      "steps": 3,
+      "wall_ms": 951,
+      "agent_ms": 518,
+      "prompt_tokens": 457,
+      "completion_tokens": 31,
+      "planner_calls": 1,
+      "trail": [
+        "Docs",
+        "Wait for the page to update",
+        "Quickstart"
+      ],
+      "error": null,
+      "run": 4
+    },
+    {
+      "task": "two-hop",
+      "ok": true,
+      "reason": "success",
+      "steps": 3,
+      "wall_ms": 1079,
+      "agent_ms": 624,
+      "prompt_tokens": 457,
+      "completion_tokens": 31,
+      "planner_calls": 1,
+      "trail": [
+        "Docs",
+        "Wait for the page to update",
+        "Quickstart"
+      ],
+      "error": null,
+      "run": 5
+    },
+    {
+      "task": "two-hop",
+      "ok": true,
+      "reason": "success",
+      "steps": 3,
+      "wall_ms": 1235,
+      "agent_ms": 795,
+      "prompt_tokens": 457,
+      "completion_tokens": 31,
+      "planner_calls": 1,
+      "trail": [
+        "Docs",
+        "Wait for the page to update",
+        "Quickstart"
+      ],
+      "error": null,
+      "run": 6
+    },
+    {
+      "task": "two-hop",
+      "ok": true,
+      "reason": "success",
+      "steps": 3,
+      "wall_ms": 960,
+      "agent_ms": 524,
+      "prompt_tokens": 457,
+      "completion_tokens": 31,
+      "planner_calls": 1,
+      "trail": [
+        "Docs",
+        "Wait for the page to update",
+        "Quickstart"
+      ],
+      "error": null,
+      "run": 7
+    },
+    {
+      "task": "two-hop",
+      "ok": true,
+      "reason": "success",
+      "steps": 3,
+      "wall_ms": 970,
+      "agent_ms": 535,
+      "prompt_tokens": 457,
+      "completion_tokens": 31,
+      "planner_calls": 1,
+      "trail": [
+        "Docs",
+        "Wait for the page to update",
+        "Quickstart"
+      ],
+      "error": null,
+      "run": 8
+    },
+    {
+      "task": "two-hop",
+      "ok": true,
+      "reason": "success",
+      "steps": 3,
+      "wall_ms": 939,
+      "agent_ms": 503,
+      "prompt_tokens": 457,
+      "completion_tokens": 31,
+      "planner_calls": 1,
+      "trail": [
+        "Docs",
+        "Wait for the page to update",
+        "Quickstart"
+      ],
+      "error": null,
+      "run": 9
+    },
+    {
+      "task": "veto",
+      "ok": true,
+      "reason": "vetoed",
+      "steps": 0,
+      "wall_ms": 784,
+      "agent_ms": 0,
+      "prompt_tokens": 453,
+      "completion_tokens": 26,
+      "planner_calls": 1,
+      "trail": [],
+      "error": "Subscribe",
+      "run": 0
+    },
+    {
+      "task": "veto",
+      "ok": true,
+      "reason": "vetoed",
+      "steps": 0,
+      "wall_ms": 716,
+      "agent_ms": 0,
+      "prompt_tokens": 453,
+      "completion_tokens": 26,
+      "planner_calls": 1,
+      "trail": [],
+      "error": "Subscribe",
+      "run": 1
+    },
+    {
+      "task": "veto",
+      "ok": true,
+      "reason": "vetoed",
+      "steps": 0,
+      "wall_ms": 719,
+      "agent_ms": 0,
+      "prompt_tokens": 453,
+      "completion_tokens": 26,
+      "planner_calls": 1,
+      "trail": [],
+      "error": "Subscribe",
+      "run": 2
+    },
+    {
+      "task": "veto",
+      "ok": true,
+      "reason": "vetoed",
+      "steps": 0,
+      "wall_ms": 1116,
+      "agent_ms": 0,
+      "prompt_tokens": 453,
+      "completion_tokens": 26,
+      "planner_calls": 1,
+      "trail": [],
+      "error": "Subscribe",
+      "run": 3
+    },
+    {
+      "task": "veto",
+      "ok": true,
+      "reason": "vetoed",
+      "steps": 0,
+      "wall_ms": 927,
+      "agent_ms": 0,
+      "prompt_tokens": 453,
+      "completion_tokens": 26,
+      "planner_calls": 1,
+      "trail": [],
+      "error": "Subscribe",
+      "run": 4
+    },
+    {
+      "task": "veto",
+      "ok": true,
+      "reason": "vetoed",
+      "steps": 0,
+      "wall_ms": 725,
+      "agent_ms": 0,
+      "prompt_tokens": 453,
+      "completion_tokens": 26,
+      "planner_calls": 1,
+      "trail": [],
+      "error": "Subscribe",
+      "run": 5
+    },
+    {
+      "task": "veto",
+      "ok": true,
+      "reason": "vetoed",
+      "steps": 0,
+      "wall_ms": 798,
+      "agent_ms": 0,
+      "prompt_tokens": 453,
+      "completion_tokens": 26,
+      "planner_calls": 1,
+      "trail": [],
+      "error": "Subscribe",
+      "run": 6
+    },
+    {
+      "task": "veto",
+      "ok": true,
+      "reason": "vetoed",
+      "steps": 0,
+      "wall_ms": 819,
+      "agent_ms": 0,
+      "prompt_tokens": 453,
+      "completion_tokens": 26,
+      "planner_calls": 1,
+      "trail": [],
+      "error": "Subscribe",
+      "run": 7
+    },
+    {
+      "task": "veto",
+      "ok": true,
+      "reason": "vetoed",
+      "steps": 0,
+      "wall_ms": 779,
+      "agent_ms": 0,
+      "prompt_tokens": 453,
+      "completion_tokens": 26,
+      "planner_calls": 1,
+      "trail": [],
+      "error": "Subscribe",
+      "run": 8
+    },
+    {
+      "task": "veto",
+      "ok": true,
+      "reason": "vetoed",
+      "steps": 0,
+      "wall_ms": 721,
+      "agent_ms": 0,
+      "prompt_tokens": 453,
+      "completion_tokens": 26,
+      "planner_calls": 1,
+      "trail": [],
+      "error": "Subscribe",
+      "run": 9
+    }
+  ],
+  "summary": [
+    {
+      "task": "one-hop",
+      "runs": 10,
+      "pass_rate": "10/10",
+      "median_steps": 1.0,
+      "median_wall_s": 0.81,
+      "median_agent_s": 0.36,
+      "median_local_planner_tokens": 479.0,
+      "external_api_tokens": 0,
+      "screenshot_loop_image_tokens_estimate": 1365
+    },
+    {
+      "task": "two-hop",
+      "runs": 10,
+      "pass_rate": "10/10",
+      "median_steps": 3.0,
+      "median_wall_s": 0.96,
+      "median_agent_s": 0.53,
+      "median_local_planner_tokens": 488.0,
+      "external_api_tokens": 0,
+      "screenshot_loop_image_tokens_estimate": 4095
+    },
+    {
+      "task": "veto",
+      "runs": 10,
+      "pass_rate": "10/10",
+      "median_steps": 0.0,
+      "median_wall_s": 0.78,
+      "median_agent_s": 0.0,
+      "median_local_planner_tokens": 479.0,
+      "external_api_tokens": 0,
+      "screenshot_loop_image_tokens_estimate": 0
+    }
+  ]
+}
