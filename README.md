@@ -122,18 +122,38 @@ The closest comparison for Claude in Chrome is the warm case, because its Chrome
 | two-hop, median time | 0.51 s (10 runs) | 1.86 s (10 runs) | 10.80 s (3 runs) |
 | one-hop, tool calls / model turns | in-process, 1 planner call | same | 4 calls / 2 turns |
 | two-hop, tool calls / model turns | in-process, 1 planner call | same | 6 calls / 3 turns |
-| one-hop, tokens | 479 local, 0 external | same | about 542 in tool results (estimate), billed |
-| two-hop, tokens | 488 local, 0 external | same | about 951 in tool results (estimate), billed |
+| one-hop, tokens | 479 local, 0 external | same | 2,293 new tokens measured (868 agent output + 1,425 tool results), billed |
+| two-hop, tokens | 488 local, 0 external | same | 3,320 new tokens measured (976 agent output + 2,344 tool results), billed |
 | Pass rate | 10/10 and 10/10 | 10/10 and 10/10 | 3/3 and 3/3 by screenshot path |
 | Stops dangerous clicks before they happen | Yes (veto) | Yes | No built-in veto |
 
 Speed when both browsers are already open: fastbrowse was about 24x faster on one-hop and about 21x on two-hop. When fastbrowse starts and stops its own headless Chrome every run, it was still about 4x faster on one-hop (1.68 s vs 7.33 s) and about 6x on two-hop (1.86 s vs 10.80 s).
 
-How to read the token rows:
+Claude in Chrome token numbers are measured, not estimated. They come from the `usage` the API returned for each agent turn (read from the Claude Code session transcript). Tool-result tokens are the growth of the prompt between turns, minus the agent's own output. Medians of 3 runs:
 
-- fastbrowse tokens are measured at the Ollama proxy and are local, so they cost nothing per call.
-- Claude in Chrome tokens are an estimate from tool-result sizes: images at width x height / 750 (a 784x340 screenshot is about 355 tokens), text at characters / 4. They exclude the agent's own output tokens and the re-reading of earlier turns, so real billed usage is higher than shown.
-- The two columns measure different things. One is local planner tokens with no bill, the other is external input that is billed.
+| | one-hop | two-hop |
+|---|---|---|
+| Agent turns | 2 | 3 |
+| Agent output tokens (incl. thinking) | 868 (283 thinking) | 976 (133 thinking) |
+| Tool-result tokens added to context | 1,425 | 2,344 |
+| New tokens per run (output + results) | 2,293 | 3,320 |
+| fastbrowse, for comparison | 479 local, 0 external | 488 local, 0 external |
+
+Cost per action, measured from turns that contained a single action (each includes about 100 tokens of tool wrapper text):
+
+| Action | Tokens added to context |
+|---|---|
+| `find` | 179 |
+| `computer` click | 237 |
+| `get_page_text` | 179 |
+| `navigate` | about 250 |
+| Screenshot at 0.5 scale (784x340) | 676 to 705 |
+| Screenshot at full scale (1568x680) | 1,739 |
+
+- My earlier image estimate (width x height / 750) was too low. It predicted 355 tokens for the half-scale screenshot and about 1,420 for the full-scale one, against 690 and 1,739 measured.
+- Re-reading the context is the larger cost. Every agent turn re-sends the whole conversation. In these runs the session context was 230k to 250k tokens, so one-hop read about 477k tokens from the cache and two-hop about 743k (cache reads are billed at a lower rate than fresh input). That number depends on how long the agent's conversation is, not on the browser tool, so a fresh short session pays far less. It is stored per run in `bench_claude_in_chrome.json`.
+- Page size matters. These pages are tiny, so `get_page_text` returned about 180 tokens. A real page returns far more, and each later turn re-reads it.
+- fastbrowse tokens are measured at the Ollama proxy and are local, so they cost nothing per call. Claude in Chrome tokens are external and billed.
 
 What the Claude in Chrome runs showed beyond the numbers:
 
@@ -143,10 +163,10 @@ What the Claude in Chrome runs showed beyond the numbers:
 Fairness notes:
 
 - Claude in Chrome time includes the agent's model round trips, which is what an agent loop really costs. fastbrowse plans in-process.
-- 10 runs vs 3 runs, on a tiny local page. Treat the ratios as an order of magnitude, not a precise figure.
+- 10 runs vs 3 runs, on a tiny local page. The Claude in Chrome token counts come from one session, with a thinking-heavy agent; another agent or model would use a different number of output tokens. Treat the ratios as an order of magnitude, not a precise figure.
 - Claude in Chrome is the better tool when you need screenshots, complex pages, uploads or a side effect on purpose. fastbrowse is for fast, read-first, vetoable work.
 
-To reproduce the Claude in Chrome side: serve the fixture with `uv run python -c "import bench,time; bench.serve(bench.Site,8791); time.sleep(900)"`, then run each task through the Claude in Chrome tools while stamping `date +%s%N` before and after.
+To reproduce the Claude in Chrome side: serve the fixture with `uv run python -c "import bench,time; bench.serve(bench.Site,8791); time.sleep(900)"`, then run each task through the Claude in Chrome tools while stamping `date +%s%N` before and after. Read token usage from the `usage` field of each assistant turn in your agent's transcript.
 
 Limits of this benchmark:
 

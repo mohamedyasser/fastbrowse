@@ -2,24 +2,143 @@
   "measured_on": "2026-10-02",
   "method": "Claude in Chrome driven by an agent through the same local fixture site as bench.py. Wall time is the gap between two `date +%s%N` stamps around each run, so it includes the agent's own model round trips. Screenshot path with 0.5 scale. Success verified with get_page_text.",
   "rows": [
-    {"task": "one-hop", "run": 0, "ok": true, "wall_s": 7.33, "tool_calls": 4, "model_turns": 2, "screenshots": 1},
-    {"task": "one-hop", "run": 1, "ok": true, "wall_s": 7.40, "tool_calls": 4, "model_turns": 2, "screenshots": 1},
-    {"task": "one-hop", "run": 2, "ok": true, "wall_s": 6.98, "tool_calls": 4, "model_turns": 2, "screenshots": 1},
-    {"task": "two-hop", "run": 0, "ok": true, "wall_s": 10.87, "tool_calls": 6, "model_turns": 3, "screenshots": 2},
-    {"task": "two-hop", "run": 1, "ok": true, "wall_s": 10.80, "tool_calls": 6, "model_turns": 3, "screenshots": 2},
-    {"task": "two-hop", "run": 2, "ok": true, "wall_s": 10.79, "tool_calls": 6, "model_turns": 3, "screenshots": 2}
+    {
+      "task": "one-hop",
+      "run": 0,
+      "ok": true,
+      "wall_s": 7.33,
+      "tool_calls": 4,
+      "model_turns": 2,
+      "screenshots": 1
+    },
+    {
+      "task": "one-hop",
+      "run": 1,
+      "ok": true,
+      "wall_s": 7.4,
+      "tool_calls": 4,
+      "model_turns": 2,
+      "screenshots": 1
+    },
+    {
+      "task": "one-hop",
+      "run": 2,
+      "ok": true,
+      "wall_s": 6.98,
+      "tool_calls": 4,
+      "model_turns": 2,
+      "screenshots": 1
+    },
+    {
+      "task": "two-hop",
+      "run": 0,
+      "ok": true,
+      "wall_s": 10.87,
+      "tool_calls": 6,
+      "model_turns": 3,
+      "screenshots": 2
+    },
+    {
+      "task": "two-hop",
+      "run": 1,
+      "ok": true,
+      "wall_s": 10.8,
+      "tool_calls": 6,
+      "model_turns": 3,
+      "screenshots": 2
+    },
+    {
+      "task": "two-hop",
+      "run": 2,
+      "ok": true,
+      "wall_s": 10.79,
+      "tool_calls": 6,
+      "model_turns": 3,
+      "screenshots": 2
+    }
   ],
   "text_path_trials": [
-    {"attempt": "find + click by ref, run 1", "navigated": false, "note": "click reported success, page stayed on the home page; one get_page_text call failed because the extension disconnected"},
-    {"attempt": "find + click by ref, run 2", "navigated": false, "note": "click reported success, page stayed on the home page after two further reads"}
+    {
+      "attempt": "find + click by ref, run 1",
+      "navigated": false,
+      "note": "click reported success, page stayed on the home page; one get_page_text call failed because the extension disconnected"
+    },
+    {
+      "attempt": "find + click by ref, run 2",
+      "navigated": false,
+      "note": "click reported success, page stayed on the home page after two further reads"
+    }
   ],
-  "token_estimates": {
-    "screenshot_784x340_tokens": 355,
-    "navigate_result_tokens": 58,
-    "click_result_tokens": 54,
-    "get_page_text_result_tokens": 75,
-    "one_hop_tool_result_tokens": 542,
-    "two_hop_tool_result_tokens": 951,
-    "basis": "images: width x height / 750; text: characters / 4. Estimates, not billing data. They exclude the agent's own output tokens and the re-reading of earlier turns."
+  "measured_usage": {
+    "source": "Per-turn `usage` returned by the API for each assistant turn, read from the Claude Code session transcript. tool_result_tokens_added = next turn's total prompt tokens minus this turn's total prompt tokens minus this turn's output tokens, so it is the context growth caused by the tool results (plus any system reminder injected in between).",
+    "per_run": {
+      "one-hop": [
+        {
+          "turns": 2,
+          "agent_output_tokens": 1079,
+          "of_which_thinking": 472,
+          "tool_result_tokens_added": 1425,
+          "cache_read_tokens": 471879,
+          "cache_write_tokens": 2506,
+          "uncached_input_tokens": 4
+        },
+        {
+          "turns": 2,
+          "agent_output_tokens": 868,
+          "of_which_thinking": 283,
+          "tool_result_tokens_added": 1424,
+          "cache_read_tokens": 476889,
+          "cache_write_tokens": 2303,
+          "uncached_input_tokens": 4
+        },
+        {
+          "turns": 2,
+          "agent_output_tokens": 813,
+          "of_which_thinking": 167,
+          "tool_result_tokens_added": 2166,
+          "cache_read_tokens": 481484,
+          "cache_write_tokens": 2860,
+          "uncached_input_tokens": 4
+        }
+      ],
+      "two-hop": [
+        {
+          "turns": 3,
+          "agent_output_tokens": 979,
+          "of_which_thinking": 135,
+          "tool_result_tokens_added": 2340,
+          "cache_read_tokens": 732782,
+          "cache_write_tokens": 3408,
+          "uncached_input_tokens": 6
+        },
+        {
+          "turns": 3,
+          "agent_output_tokens": 976,
+          "of_which_thinking": 133,
+          "tool_result_tokens_added": 2367,
+          "cache_read_tokens": 742851,
+          "cache_write_tokens": 3369,
+          "uncached_input_tokens": 6
+        },
+        {
+          "turns": 3,
+          "agent_output_tokens": 884,
+          "of_which_thinking": 41,
+          "tool_result_tokens_added": 2344,
+          "cache_read_tokens": 752813,
+          "cache_write_tokens": 3221,
+          "uncached_input_tokens": 6
+        }
+      ]
+    },
+    "per_action_tool_result_tokens": {
+      "find": 179,
+      "click": 237,
+      "get_page_text": 179,
+      "navigate": 250,
+      "screenshot_full_scale_1568x680": 1739,
+      "screenshot_half_scale_784x340": "676 to 705 (click+screenshot turns minus the 237-token click)"
+    },
+    "note": "Each action figure comes from a turn that contained that single action, and includes about 100 tokens of tool wrapper text. cache_read_tokens is dominated by the size of the session context (about 230k to 250k tokens re-read every turn), so it depends on how long the agent's conversation is, not on the browser tool."
   }
 }
