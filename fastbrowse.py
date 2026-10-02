@@ -2,6 +2,7 @@ import argparse
 import json
 import os
 import re
+import signal
 import subprocess
 import sys
 import tempfile
@@ -13,6 +14,7 @@ from pathlib import Path
 
 os.environ.setdefault("BU_NAME", "fastbrowse")  # browser_harness reads BU_NAME at import time
 
+from browser_harness import _ipc as ipc  # noqa: E402
 from browser_harness.admin import NAME as DAEMON, restart_daemon  # noqa: E402
 from browser_harness.helpers import cdp  # noqa: E402
 from laya_ultrafast import Agent  # noqa: E402
@@ -112,8 +114,24 @@ def browse(url, goal, *, success=None, max_steps=10, retries=1, deny=DENY, facto
     return last
 
 
+def stop_live_daemon(grace=0.5):
+    pid = ipc.identify(DAEMON, timeout=1.0)
+    if pid is None:
+        return
+    os.kill(pid, signal.SIGTERM)
+    deadline = time.monotonic() + grace
+    while time.monotonic() < deadline:
+        try:
+            os.kill(pid, 0)
+        except OSError:
+            return
+        time.sleep(0.05)
+    os.kill(pid, signal.SIGKILL)
+
+
 def reset_daemon():
     try:
+        stop_live_daemon()  # restart_daemon alone waits 15 s for a daemon that never exits by itself
         restart_daemon(DAEMON)
     except Exception:  # cleanup only: a daemon that is already gone is the goal state
         pass

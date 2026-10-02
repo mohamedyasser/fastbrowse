@@ -961,486 +961,6 @@
       "run": 9
     },
     {
-      "mode": "cold-headless",
-      "task": "one-hop",
-      "ok": true,
-      "reason": "success",
-      "steps": 1,
-      "task_ms": 2291,
-      "total_ms": 18119,
-      "prompt_tokens": 453,
-      "completion_tokens": 26,
-      "trail": [
-        "Pricing"
-      ],
-      "error": null,
-      "run": 0
-    },
-    {
-      "mode": "cold-headless",
-      "task": "one-hop",
-      "ok": true,
-      "reason": "success",
-      "steps": 1,
-      "task_ms": 855,
-      "total_ms": 16634,
-      "prompt_tokens": 453,
-      "completion_tokens": 26,
-      "trail": [
-        "Pricing"
-      ],
-      "error": null,
-      "run": 1
-    },
-    {
-      "mode": "cold-headless",
-      "task": "one-hop",
-      "ok": true,
-      "reason": "success",
-      "steps": 1,
-      "task_ms": 1230,
-      "total_ms": 16927,
-      "prompt_tokens": 453,
-      "completion_tokens": 26,
-      "trail": [
-        "Pricing"
-      ],
-      "error": null,
-      "run": 2
-    },
-    {
-      "mode": "cold-headless",
-      "task": "one-hop",
-      "ok": true,
-      "reason": "success",
-      "steps": 1,
-      "task_ms": 1093,
-      "total_ms": 16917,
-      "prompt_tokens": 453,
-      "completion_tokens": 26,
-      "trail": [
-        "Pricing"
-      ],
-      "error": null,
-      "run": 3
-    },
-    {
-      "mode": "cold-headless",
-      "task": "one-hop",
-      "ok": true,
-      "reason": "success",
-      "steps": 1,
-      "task_ms": 909,
-      "total_ms": 16580,
-      "prompt_tokens": 453,
-      "completion_tokens": 26,
-      "trail": [
-        "Pricing"
-      ],
-      "error": null,
-      "run": 4
-    },
-    {
-      "mode": "cold-headless",
-      "task": "two-hop",
-      "ok": true,
-      "reason": "success",
-      "steps": 3,
-      "task_ms": 1078,
-      "total_ms": 16781,
-      "prompt_tokens": 457,
-      "completion_tokens": 31,
-      "trail": [
-        "Docs",
-        "Wait for the page to update",
-        "Quickstart"
-      ],
-      "error": null,
-      "run": 0
-    },
-    {
-      "mode": "cold-headless",
-      "task": "two-hop",
-      "ok": true,
-      "reason": "success",
-      "steps": 3,
-      "task_ms": 938,
-      "total_ms": 16684,
-      "prompt_tokens": 457,
-      "completion_tokens": 31,
-      "trail": [
-        "Docs",
-        "Wait for the page to update",
-        "Quickstart"
-      ],
-      "error": null,
-      "run": 1
-    },
-    {
-      "mode": "cold-headless",
-      "task": "two-hop",
-      "ok": true,
-      "reason": "success",
-      "steps": 3,
-      "task_ms": 1026,
-      "total_ms": 16658,
-      "prompt_tokens": 457,
-      "completion_tokens": 31,
-      "trail": [
-        "Docs",
-        "Wait for the page to update",
-        "Quickstart"
-      ],
-      "error": null,
-      "run": 2
-    },
-    {
-      "mode": "cold-headless",
-      "task": "two-hop",
-      "ok": true,
-      "reason": "success",
-      "steps": 3,
-      "task_ms": 1097,
-      "total_ms": 16810,
-      "prompt_tokens": 457,
-      "completion_tokens": 31,
-      "trail": [
-        "Docs",
-        "Wait for the page to update",
-        "Quickstart"
-      ],
-      "error": null,
-      "run": 3
-    },
-    {
-      "mode": "cold-headless",
-      "task": "two-hop",
-      "ok": true,
-      "reason": "success",
-      "steps": 3,
-      "task_ms": 937,
-      "total_ms": 16613,
-      "prompt_tokens": 457,
-      "completion_tokens": 31,
-      "trail": [
-        "Docs",
-        "Wait for the page to update",
-        "Quickstart"
-      ],
-      "error": null,
-      "run": 4
-    },
-    {
-      "mode": "cold-headless",
-      "task": "veto",
-      "ok": true,
-      "reason": "vetoed",
-      "steps": 0,
-      "task_ms": 899,
-      "total_ms": 16578,
-      "prompt_tokens": 453,
-      "completion_tokens": 26,
-      "trail": [],
-      "error": "Subscribe",
-      "run": 0
-    },
-    {
-      "mode": "cold-headless",
-      "task": "veto",
-      "ok": true,
-      "reason": "vetoed",
-      "steps": 0,
-      "task_ms": 732,
-      "total_ms": 16407,
-      "prompt_tokens": 453,
-      "completion_tokens": 26,
-      "trail": [],
-      "error": "Subscribe",
-      "run": 1
-    },
-    {
-      "mode": "cold-headless",
-      "task": "veto",
-      "ok": true,
-      "reason": "vetoed",
-      "steps": 0,
-      "task_ms": 815,
-      "total_ms": 16489,
-      "prompt_tokens": 453,
-      "completion_tokens": 26,
-      "trail": [],
-      "error": "Subscribe",
-      "run": 2
-    },
-    {
-      "mode": "cold-headless",
-      "task": "veto",
-      "ok": true,
-      "reason": "vetoed",
-      "steps": 0,
-      "task_ms": 960,
-      "total_ms": 16663,
-      "prompt_tokens": 453,
-      "completion_tokens": 26,
-      "trail": [],
-      "error": "Subscribe",
-      "run": 3
-    },
-    {
-      "mode": "cold-headless",
-      "task": "veto",
-      "ok": true,
-      "reason": "vetoed",
-      "steps": 0,
-      "task_ms": 826,
-      "total_ms": 16524,
-      "prompt_tokens": 453,
-      "completion_tokens": 26,
-      "trail": [],
-      "error": "Subscribe",
-      "run": 4
-    },
-    {
-      "mode": "cold-headed",
-      "task": "one-hop",
-      "ok": true,
-      "reason": "success",
-      "steps": 1,
-      "task_ms": 935,
-      "total_ms": 16962,
-      "prompt_tokens": 453,
-      "completion_tokens": 26,
-      "trail": [
-        "Pricing"
-      ],
-      "error": null,
-      "run": 0
-    },
-    {
-      "mode": "cold-headed",
-      "task": "one-hop",
-      "ok": true,
-      "reason": "success",
-      "steps": 1,
-      "task_ms": 1072,
-      "total_ms": 17379,
-      "prompt_tokens": 453,
-      "completion_tokens": 26,
-      "trail": [
-        "Pricing"
-      ],
-      "error": null,
-      "run": 1
-    },
-    {
-      "mode": "cold-headed",
-      "task": "one-hop",
-      "ok": true,
-      "reason": "success",
-      "steps": 1,
-      "task_ms": 893,
-      "total_ms": 17137,
-      "prompt_tokens": 453,
-      "completion_tokens": 26,
-      "trail": [
-        "Pricing"
-      ],
-      "error": null,
-      "run": 2
-    },
-    {
-      "mode": "cold-headed",
-      "task": "one-hop",
-      "ok": true,
-      "reason": "success",
-      "steps": 1,
-      "task_ms": 929,
-      "total_ms": 17180,
-      "prompt_tokens": 453,
-      "completion_tokens": 26,
-      "trail": [
-        "Pricing"
-      ],
-      "error": null,
-      "run": 3
-    },
-    {
-      "mode": "cold-headed",
-      "task": "one-hop",
-      "ok": true,
-      "reason": "success",
-      "steps": 1,
-      "task_ms": 803,
-      "total_ms": 17073,
-      "prompt_tokens": 453,
-      "completion_tokens": 26,
-      "trail": [
-        "Pricing"
-      ],
-      "error": null,
-      "run": 4
-    },
-    {
-      "mode": "cold-headed",
-      "task": "two-hop",
-      "ok": true,
-      "reason": "success",
-      "steps": 3,
-      "task_ms": 1283,
-      "total_ms": 17511,
-      "prompt_tokens": 457,
-      "completion_tokens": 31,
-      "trail": [
-        "Docs",
-        "Wait for the page to update",
-        "Quickstart"
-      ],
-      "error": null,
-      "run": 0
-    },
-    {
-      "mode": "cold-headed",
-      "task": "two-hop",
-      "ok": true,
-      "reason": "success",
-      "steps": 3,
-      "task_ms": 1093,
-      "total_ms": 17379,
-      "prompt_tokens": 457,
-      "completion_tokens": 31,
-      "trail": [
-        "Docs",
-        "Wait for the page to update",
-        "Quickstart"
-      ],
-      "error": null,
-      "run": 1
-    },
-    {
-      "mode": "cold-headed",
-      "task": "two-hop",
-      "ok": true,
-      "reason": "success",
-      "steps": 3,
-      "task_ms": 1117,
-      "total_ms": 17243,
-      "prompt_tokens": 457,
-      "completion_tokens": 31,
-      "trail": [
-        "Docs",
-        "Wait for the page to update",
-        "Quickstart"
-      ],
-      "error": null,
-      "run": 2
-    },
-    {
-      "mode": "cold-headed",
-      "task": "two-hop",
-      "ok": true,
-      "reason": "success",
-      "steps": 3,
-      "task_ms": 1066,
-      "total_ms": 17214,
-      "prompt_tokens": 457,
-      "completion_tokens": 31,
-      "trail": [
-        "Docs",
-        "Wait for the page to update",
-        "Quickstart"
-      ],
-      "error": null,
-      "run": 3
-    },
-    {
-      "mode": "cold-headed",
-      "task": "two-hop",
-      "ok": true,
-      "reason": "success",
-      "steps": 3,
-      "task_ms": 1129,
-      "total_ms": 17429,
-      "prompt_tokens": 457,
-      "completion_tokens": 31,
-      "trail": [
-        "Docs",
-        "Wait for the page to update",
-        "Quickstart"
-      ],
-      "error": null,
-      "run": 4
-    },
-    {
-      "mode": "cold-headed",
-      "task": "veto",
-      "ok": true,
-      "reason": "vetoed",
-      "steps": 0,
-      "task_ms": 1164,
-      "total_ms": 17522,
-      "prompt_tokens": 453,
-      "completion_tokens": 26,
-      "trail": [],
-      "error": "Subscribe",
-      "run": 0
-    },
-    {
-      "mode": "cold-headed",
-      "task": "veto",
-      "ok": true,
-      "reason": "vetoed",
-      "steps": 0,
-      "task_ms": 1183,
-      "total_ms": 17481,
-      "prompt_tokens": 453,
-      "completion_tokens": 26,
-      "trail": [],
-      "error": "Subscribe",
-      "run": 1
-    },
-    {
-      "mode": "cold-headed",
-      "task": "veto",
-      "ok": true,
-      "reason": "vetoed",
-      "steps": 0,
-      "task_ms": 766,
-      "total_ms": 16960,
-      "prompt_tokens": 453,
-      "completion_tokens": 26,
-      "trail": [],
-      "error": "Subscribe",
-      "run": 2
-    },
-    {
-      "mode": "cold-headed",
-      "task": "veto",
-      "ok": true,
-      "reason": "vetoed",
-      "steps": 0,
-      "task_ms": 1104,
-      "total_ms": 17221,
-      "prompt_tokens": 453,
-      "completion_tokens": 26,
-      "trail": [],
-      "error": "Subscribe",
-      "run": 3
-    },
-    {
-      "mode": "cold-headed",
-      "task": "veto",
-      "ok": true,
-      "reason": "vetoed",
-      "steps": 0,
-      "task_ms": 1088,
-      "total_ms": 17129,
-      "prompt_tokens": 453,
-      "completion_tokens": 26,
-      "trail": [],
-      "error": "Subscribe",
-      "run": 4
-    },
-    {
       "mode": "warm-headless-same-tab",
       "task": "one-hop",
       "ok": true,
@@ -2447,6 +1967,966 @@
       "trail": [],
       "error": "Subscribe",
       "run": 0
+    },
+    {
+      "mode": "cold-headless",
+      "task": "one-hop",
+      "ok": true,
+      "reason": "success",
+      "steps": 1,
+      "task_ms": 1485,
+      "total_ms": 2381,
+      "prompt_tokens": 453,
+      "completion_tokens": 26,
+      "trail": [
+        "Pricing"
+      ],
+      "error": null,
+      "run": 0
+    },
+    {
+      "mode": "cold-headless",
+      "task": "one-hop",
+      "ok": true,
+      "reason": "success",
+      "steps": 1,
+      "task_ms": 732,
+      "total_ms": 1662,
+      "prompt_tokens": 453,
+      "completion_tokens": 26,
+      "trail": [
+        "Pricing"
+      ],
+      "error": null,
+      "run": 1
+    },
+    {
+      "mode": "cold-headless",
+      "task": "one-hop",
+      "ok": true,
+      "reason": "success",
+      "steps": 1,
+      "task_ms": 746,
+      "total_ms": 1661,
+      "prompt_tokens": 453,
+      "completion_tokens": 26,
+      "trail": [
+        "Pricing"
+      ],
+      "error": null,
+      "run": 2
+    },
+    {
+      "mode": "cold-headless",
+      "task": "one-hop",
+      "ok": true,
+      "reason": "success",
+      "steps": 1,
+      "task_ms": 731,
+      "total_ms": 1675,
+      "prompt_tokens": 453,
+      "completion_tokens": 26,
+      "trail": [
+        "Pricing"
+      ],
+      "error": null,
+      "run": 3
+    },
+    {
+      "mode": "cold-headless",
+      "task": "one-hop",
+      "ok": true,
+      "reason": "success",
+      "steps": 1,
+      "task_ms": 752,
+      "total_ms": 1702,
+      "prompt_tokens": 453,
+      "completion_tokens": 26,
+      "trail": [
+        "Pricing"
+      ],
+      "error": null,
+      "run": 4
+    },
+    {
+      "mode": "cold-headless",
+      "task": "one-hop",
+      "ok": true,
+      "reason": "success",
+      "steps": 1,
+      "task_ms": 753,
+      "total_ms": 1687,
+      "prompt_tokens": 453,
+      "completion_tokens": 26,
+      "trail": [
+        "Pricing"
+      ],
+      "error": null,
+      "run": 5
+    },
+    {
+      "mode": "cold-headless",
+      "task": "one-hop",
+      "ok": true,
+      "reason": "success",
+      "steps": 1,
+      "task_ms": 728,
+      "total_ms": 1694,
+      "prompt_tokens": 453,
+      "completion_tokens": 26,
+      "trail": [
+        "Pricing"
+      ],
+      "error": null,
+      "run": 6
+    },
+    {
+      "mode": "cold-headless",
+      "task": "one-hop",
+      "ok": true,
+      "reason": "success",
+      "steps": 1,
+      "task_ms": 783,
+      "total_ms": 1819,
+      "prompt_tokens": 453,
+      "completion_tokens": 26,
+      "trail": [
+        "Pricing"
+      ],
+      "error": null,
+      "run": 7
+    },
+    {
+      "mode": "cold-headless",
+      "task": "one-hop",
+      "ok": true,
+      "reason": "success",
+      "steps": 1,
+      "task_ms": 736,
+      "total_ms": 1653,
+      "prompt_tokens": 453,
+      "completion_tokens": 26,
+      "trail": [
+        "Pricing"
+      ],
+      "error": null,
+      "run": 8
+    },
+    {
+      "mode": "cold-headless",
+      "task": "one-hop",
+      "ok": true,
+      "reason": "success",
+      "steps": 1,
+      "task_ms": 729,
+      "total_ms": 1667,
+      "prompt_tokens": 453,
+      "completion_tokens": 26,
+      "trail": [
+        "Pricing"
+      ],
+      "error": null,
+      "run": 9
+    },
+    {
+      "mode": "cold-headless",
+      "task": "two-hop",
+      "ok": true,
+      "reason": "success",
+      "steps": 3,
+      "task_ms": 965,
+      "total_ms": 2036,
+      "prompt_tokens": 457,
+      "completion_tokens": 31,
+      "trail": [
+        "Docs",
+        "Wait for the page to update",
+        "Quickstart"
+      ],
+      "error": null,
+      "run": 0
+    },
+    {
+      "mode": "cold-headless",
+      "task": "two-hop",
+      "ok": true,
+      "reason": "success",
+      "steps": 3,
+      "task_ms": 940,
+      "total_ms": 1867,
+      "prompt_tokens": 457,
+      "completion_tokens": 31,
+      "trail": [
+        "Docs",
+        "Wait for the page to update",
+        "Quickstart"
+      ],
+      "error": null,
+      "run": 1
+    },
+    {
+      "mode": "cold-headless",
+      "task": "two-hop",
+      "ok": true,
+      "reason": "success",
+      "steps": 3,
+      "task_ms": 973,
+      "total_ms": 1838,
+      "prompt_tokens": 457,
+      "completion_tokens": 31,
+      "trail": [
+        "Docs",
+        "Wait for the page to update",
+        "Quickstart"
+      ],
+      "error": null,
+      "run": 2
+    },
+    {
+      "mode": "cold-headless",
+      "task": "two-hop",
+      "ok": true,
+      "reason": "success",
+      "steps": 3,
+      "task_ms": 949,
+      "total_ms": 1889,
+      "prompt_tokens": 457,
+      "completion_tokens": 31,
+      "trail": [
+        "Docs",
+        "Wait for the page to update",
+        "Quickstart"
+      ],
+      "error": null,
+      "run": 3
+    },
+    {
+      "mode": "cold-headless",
+      "task": "two-hop",
+      "ok": true,
+      "reason": "success",
+      "steps": 3,
+      "task_ms": 938,
+      "total_ms": 1857,
+      "prompt_tokens": 457,
+      "completion_tokens": 31,
+      "trail": [
+        "Docs",
+        "Wait for the page to update",
+        "Quickstart"
+      ],
+      "error": null,
+      "run": 4
+    },
+    {
+      "mode": "cold-headless",
+      "task": "two-hop",
+      "ok": true,
+      "reason": "success",
+      "steps": 3,
+      "task_ms": 940,
+      "total_ms": 1856,
+      "prompt_tokens": 457,
+      "completion_tokens": 31,
+      "trail": [
+        "Docs",
+        "Wait for the page to update",
+        "Quickstart"
+      ],
+      "error": null,
+      "run": 5
+    },
+    {
+      "mode": "cold-headless",
+      "task": "two-hop",
+      "ok": true,
+      "reason": "success",
+      "steps": 3,
+      "task_ms": 919,
+      "total_ms": 1833,
+      "prompt_tokens": 457,
+      "completion_tokens": 31,
+      "trail": [
+        "Docs",
+        "Wait for the page to update",
+        "Quickstart"
+      ],
+      "error": null,
+      "run": 6
+    },
+    {
+      "mode": "cold-headless",
+      "task": "two-hop",
+      "ok": true,
+      "reason": "success",
+      "steps": 3,
+      "task_ms": 914,
+      "total_ms": 1873,
+      "prompt_tokens": 457,
+      "completion_tokens": 31,
+      "trail": [
+        "Docs",
+        "Wait for the page to update",
+        "Quickstart"
+      ],
+      "error": null,
+      "run": 7
+    },
+    {
+      "mode": "cold-headless",
+      "task": "two-hop",
+      "ok": true,
+      "reason": "success",
+      "steps": 3,
+      "task_ms": 942,
+      "total_ms": 1871,
+      "prompt_tokens": 457,
+      "completion_tokens": 31,
+      "trail": [
+        "Docs",
+        "Wait for the page to update",
+        "Quickstart"
+      ],
+      "error": null,
+      "run": 8
+    },
+    {
+      "mode": "cold-headless",
+      "task": "two-hop",
+      "ok": true,
+      "reason": "success",
+      "steps": 3,
+      "task_ms": 924,
+      "total_ms": 1826,
+      "prompt_tokens": 457,
+      "completion_tokens": 31,
+      "trail": [
+        "Docs",
+        "Wait for the page to update",
+        "Quickstart"
+      ],
+      "error": null,
+      "run": 9
+    },
+    {
+      "mode": "cold-headless",
+      "task": "veto",
+      "ok": true,
+      "reason": "vetoed",
+      "steps": 0,
+      "task_ms": 756,
+      "total_ms": 1669,
+      "prompt_tokens": 453,
+      "completion_tokens": 26,
+      "trail": [],
+      "error": "Subscribe",
+      "run": 0
+    },
+    {
+      "mode": "cold-headless",
+      "task": "veto",
+      "ok": true,
+      "reason": "vetoed",
+      "steps": 0,
+      "task_ms": 709,
+      "total_ms": 1607,
+      "prompt_tokens": 453,
+      "completion_tokens": 26,
+      "trail": [],
+      "error": "Subscribe",
+      "run": 1
+    },
+    {
+      "mode": "cold-headless",
+      "task": "veto",
+      "ok": true,
+      "reason": "vetoed",
+      "steps": 0,
+      "task_ms": 709,
+      "total_ms": 1636,
+      "prompt_tokens": 453,
+      "completion_tokens": 26,
+      "trail": [],
+      "error": "Subscribe",
+      "run": 2
+    },
+    {
+      "mode": "cold-headless",
+      "task": "veto",
+      "ok": true,
+      "reason": "vetoed",
+      "steps": 0,
+      "task_ms": 706,
+      "total_ms": 1618,
+      "prompt_tokens": 453,
+      "completion_tokens": 26,
+      "trail": [],
+      "error": "Subscribe",
+      "run": 3
+    },
+    {
+      "mode": "cold-headless",
+      "task": "veto",
+      "ok": true,
+      "reason": "vetoed",
+      "steps": 0,
+      "task_ms": 714,
+      "total_ms": 1615,
+      "prompt_tokens": 453,
+      "completion_tokens": 26,
+      "trail": [],
+      "error": "Subscribe",
+      "run": 4
+    },
+    {
+      "mode": "cold-headless",
+      "task": "veto",
+      "ok": true,
+      "reason": "vetoed",
+      "steps": 0,
+      "task_ms": 720,
+      "total_ms": 1633,
+      "prompt_tokens": 453,
+      "completion_tokens": 26,
+      "trail": [],
+      "error": "Subscribe",
+      "run": 5
+    },
+    {
+      "mode": "cold-headless",
+      "task": "veto",
+      "ok": true,
+      "reason": "vetoed",
+      "steps": 0,
+      "task_ms": 715,
+      "total_ms": 1622,
+      "prompt_tokens": 453,
+      "completion_tokens": 26,
+      "trail": [],
+      "error": "Subscribe",
+      "run": 6
+    },
+    {
+      "mode": "cold-headless",
+      "task": "veto",
+      "ok": true,
+      "reason": "vetoed",
+      "steps": 0,
+      "task_ms": 713,
+      "total_ms": 1628,
+      "prompt_tokens": 453,
+      "completion_tokens": 26,
+      "trail": [],
+      "error": "Subscribe",
+      "run": 7
+    },
+    {
+      "mode": "cold-headless",
+      "task": "veto",
+      "ok": true,
+      "reason": "vetoed",
+      "steps": 0,
+      "task_ms": 712,
+      "total_ms": 1620,
+      "prompt_tokens": 453,
+      "completion_tokens": 26,
+      "trail": [],
+      "error": "Subscribe",
+      "run": 8
+    },
+    {
+      "mode": "cold-headless",
+      "task": "veto",
+      "ok": true,
+      "reason": "vetoed",
+      "steps": 0,
+      "task_ms": 723,
+      "total_ms": 1648,
+      "prompt_tokens": 453,
+      "completion_tokens": 26,
+      "trail": [],
+      "error": "Subscribe",
+      "run": 9
+    },
+    {
+      "mode": "cold-headed",
+      "task": "one-hop",
+      "ok": true,
+      "reason": "success",
+      "steps": 1,
+      "task_ms": 773,
+      "total_ms": 1937,
+      "prompt_tokens": 453,
+      "completion_tokens": 26,
+      "trail": [
+        "Pricing"
+      ],
+      "error": null,
+      "run": 0
+    },
+    {
+      "mode": "cold-headed",
+      "task": "one-hop",
+      "ok": true,
+      "reason": "success",
+      "steps": 1,
+      "task_ms": 725,
+      "total_ms": 2218,
+      "prompt_tokens": 453,
+      "completion_tokens": 26,
+      "trail": [
+        "Pricing"
+      ],
+      "error": null,
+      "run": 1
+    },
+    {
+      "mode": "cold-headed",
+      "task": "one-hop",
+      "ok": true,
+      "reason": "success",
+      "steps": 1,
+      "task_ms": 757,
+      "total_ms": 2258,
+      "prompt_tokens": 453,
+      "completion_tokens": 26,
+      "trail": [
+        "Pricing"
+      ],
+      "error": null,
+      "run": 2
+    },
+    {
+      "mode": "cold-headed",
+      "task": "one-hop",
+      "ok": true,
+      "reason": "success",
+      "steps": 1,
+      "task_ms": 753,
+      "total_ms": 2241,
+      "prompt_tokens": 453,
+      "completion_tokens": 26,
+      "trail": [
+        "Pricing"
+      ],
+      "error": null,
+      "run": 3
+    },
+    {
+      "mode": "cold-headed",
+      "task": "one-hop",
+      "ok": true,
+      "reason": "success",
+      "steps": 1,
+      "task_ms": 718,
+      "total_ms": 2213,
+      "prompt_tokens": 453,
+      "completion_tokens": 26,
+      "trail": [
+        "Pricing"
+      ],
+      "error": null,
+      "run": 4
+    },
+    {
+      "mode": "cold-headed",
+      "task": "one-hop",
+      "ok": true,
+      "reason": "success",
+      "steps": 1,
+      "task_ms": 732,
+      "total_ms": 2153,
+      "prompt_tokens": 453,
+      "completion_tokens": 26,
+      "trail": [
+        "Pricing"
+      ],
+      "error": null,
+      "run": 5
+    },
+    {
+      "mode": "cold-headed",
+      "task": "one-hop",
+      "ok": true,
+      "reason": "success",
+      "steps": 1,
+      "task_ms": 726,
+      "total_ms": 2177,
+      "prompt_tokens": 453,
+      "completion_tokens": 26,
+      "trail": [
+        "Pricing"
+      ],
+      "error": null,
+      "run": 6
+    },
+    {
+      "mode": "cold-headed",
+      "task": "one-hop",
+      "ok": true,
+      "reason": "success",
+      "steps": 1,
+      "task_ms": 722,
+      "total_ms": 2195,
+      "prompt_tokens": 453,
+      "completion_tokens": 26,
+      "trail": [
+        "Pricing"
+      ],
+      "error": null,
+      "run": 7
+    },
+    {
+      "mode": "cold-headed",
+      "task": "one-hop",
+      "ok": true,
+      "reason": "success",
+      "steps": 1,
+      "task_ms": 729,
+      "total_ms": 2196,
+      "prompt_tokens": 453,
+      "completion_tokens": 26,
+      "trail": [
+        "Pricing"
+      ],
+      "error": null,
+      "run": 8
+    },
+    {
+      "mode": "cold-headed",
+      "task": "one-hop",
+      "ok": true,
+      "reason": "success",
+      "steps": 1,
+      "task_ms": 726,
+      "total_ms": 2209,
+      "prompt_tokens": 453,
+      "completion_tokens": 26,
+      "trail": [
+        "Pricing"
+      ],
+      "error": null,
+      "run": 9
+    },
+    {
+      "mode": "cold-headed",
+      "task": "two-hop",
+      "ok": true,
+      "reason": "success",
+      "steps": 3,
+      "task_ms": 1005,
+      "total_ms": 2362,
+      "prompt_tokens": 457,
+      "completion_tokens": 31,
+      "trail": [
+        "Docs",
+        "Wait for the page to update",
+        "Quickstart"
+      ],
+      "error": null,
+      "run": 0
+    },
+    {
+      "mode": "cold-headed",
+      "task": "two-hop",
+      "ok": true,
+      "reason": "success",
+      "steps": 3,
+      "task_ms": 884,
+      "total_ms": 2289,
+      "prompt_tokens": 457,
+      "completion_tokens": 31,
+      "trail": [
+        "Docs",
+        "Wait for the page to update",
+        "Quickstart"
+      ],
+      "error": null,
+      "run": 1
+    },
+    {
+      "mode": "cold-headed",
+      "task": "two-hop",
+      "ok": true,
+      "reason": "success",
+      "steps": 3,
+      "task_ms": 906,
+      "total_ms": 2277,
+      "prompt_tokens": 457,
+      "completion_tokens": 31,
+      "trail": [
+        "Docs",
+        "Wait for the page to update",
+        "Quickstart"
+      ],
+      "error": null,
+      "run": 2
+    },
+    {
+      "mode": "cold-headed",
+      "task": "two-hop",
+      "ok": true,
+      "reason": "success",
+      "steps": 3,
+      "task_ms": 909,
+      "total_ms": 2257,
+      "prompt_tokens": 457,
+      "completion_tokens": 31,
+      "trail": [
+        "Docs",
+        "Wait for the page to update",
+        "Quickstart"
+      ],
+      "error": null,
+      "run": 3
+    },
+    {
+      "mode": "cold-headed",
+      "task": "two-hop",
+      "ok": true,
+      "reason": "success",
+      "steps": 3,
+      "task_ms": 932,
+      "total_ms": 2330,
+      "prompt_tokens": 457,
+      "completion_tokens": 31,
+      "trail": [
+        "Docs",
+        "Wait for the page to update",
+        "Quickstart"
+      ],
+      "error": null,
+      "run": 4
+    },
+    {
+      "mode": "cold-headed",
+      "task": "two-hop",
+      "ok": true,
+      "reason": "success",
+      "steps": 3,
+      "task_ms": 902,
+      "total_ms": 2342,
+      "prompt_tokens": 457,
+      "completion_tokens": 31,
+      "trail": [
+        "Docs",
+        "Wait for the page to update",
+        "Quickstart"
+      ],
+      "error": null,
+      "run": 5
+    },
+    {
+      "mode": "cold-headed",
+      "task": "two-hop",
+      "ok": true,
+      "reason": "success",
+      "steps": 3,
+      "task_ms": 896,
+      "total_ms": 2264,
+      "prompt_tokens": 457,
+      "completion_tokens": 31,
+      "trail": [
+        "Docs",
+        "Wait for the page to update",
+        "Quickstart"
+      ],
+      "error": null,
+      "run": 6
+    },
+    {
+      "mode": "cold-headed",
+      "task": "two-hop",
+      "ok": true,
+      "reason": "success",
+      "steps": 3,
+      "task_ms": 888,
+      "total_ms": 2248,
+      "prompt_tokens": 457,
+      "completion_tokens": 31,
+      "trail": [
+        "Docs",
+        "Wait for the page to update",
+        "Quickstart"
+      ],
+      "error": null,
+      "run": 7
+    },
+    {
+      "mode": "cold-headed",
+      "task": "two-hop",
+      "ok": true,
+      "reason": "success",
+      "steps": 3,
+      "task_ms": 900,
+      "total_ms": 2349,
+      "prompt_tokens": 457,
+      "completion_tokens": 31,
+      "trail": [
+        "Docs",
+        "Wait for the page to update",
+        "Quickstart"
+      ],
+      "error": null,
+      "run": 8
+    },
+    {
+      "mode": "cold-headed",
+      "task": "two-hop",
+      "ok": true,
+      "reason": "success",
+      "steps": 3,
+      "task_ms": 903,
+      "total_ms": 2222,
+      "prompt_tokens": 457,
+      "completion_tokens": 31,
+      "trail": [
+        "Docs",
+        "Wait for the page to update",
+        "Quickstart"
+      ],
+      "error": null,
+      "run": 9
+    },
+    {
+      "mode": "cold-headed",
+      "task": "veto",
+      "ok": true,
+      "reason": "vetoed",
+      "steps": 0,
+      "task_ms": 763,
+      "total_ms": 2158,
+      "prompt_tokens": 453,
+      "completion_tokens": 26,
+      "trail": [],
+      "error": "Subscribe",
+      "run": 0
+    },
+    {
+      "mode": "cold-headed",
+      "task": "veto",
+      "ok": true,
+      "reason": "vetoed",
+      "steps": 0,
+      "task_ms": 740,
+      "total_ms": 2180,
+      "prompt_tokens": 453,
+      "completion_tokens": 26,
+      "trail": [],
+      "error": "Subscribe",
+      "run": 1
+    },
+    {
+      "mode": "cold-headed",
+      "task": "veto",
+      "ok": true,
+      "reason": "vetoed",
+      "steps": 0,
+      "task_ms": 714,
+      "total_ms": 2211,
+      "prompt_tokens": 453,
+      "completion_tokens": 26,
+      "trail": [],
+      "error": "Subscribe",
+      "run": 2
+    },
+    {
+      "mode": "cold-headed",
+      "task": "veto",
+      "ok": true,
+      "reason": "vetoed",
+      "steps": 0,
+      "task_ms": 730,
+      "total_ms": 2194,
+      "prompt_tokens": 453,
+      "completion_tokens": 26,
+      "trail": [],
+      "error": "Subscribe",
+      "run": 3
+    },
+    {
+      "mode": "cold-headed",
+      "task": "veto",
+      "ok": true,
+      "reason": "vetoed",
+      "steps": 0,
+      "task_ms": 719,
+      "total_ms": 2126,
+      "prompt_tokens": 453,
+      "completion_tokens": 26,
+      "trail": [],
+      "error": "Subscribe",
+      "run": 4
+    },
+    {
+      "mode": "cold-headed",
+      "task": "veto",
+      "ok": true,
+      "reason": "vetoed",
+      "steps": 0,
+      "task_ms": 716,
+      "total_ms": 2207,
+      "prompt_tokens": 453,
+      "completion_tokens": 26,
+      "trail": [],
+      "error": "Subscribe",
+      "run": 5
+    },
+    {
+      "mode": "cold-headed",
+      "task": "veto",
+      "ok": true,
+      "reason": "vetoed",
+      "steps": 0,
+      "task_ms": 750,
+      "total_ms": 2116,
+      "prompt_tokens": 453,
+      "completion_tokens": 26,
+      "trail": [],
+      "error": "Subscribe",
+      "run": 6
+    },
+    {
+      "mode": "cold-headed",
+      "task": "veto",
+      "ok": true,
+      "reason": "vetoed",
+      "steps": 0,
+      "task_ms": 723,
+      "total_ms": 2059,
+      "prompt_tokens": 453,
+      "completion_tokens": 26,
+      "trail": [],
+      "error": "Subscribe",
+      "run": 7
+    },
+    {
+      "mode": "cold-headed",
+      "task": "veto",
+      "ok": true,
+      "reason": "vetoed",
+      "steps": 0,
+      "task_ms": 755,
+      "total_ms": 2099,
+      "prompt_tokens": 453,
+      "completion_tokens": 26,
+      "trail": [],
+      "error": "Subscribe",
+      "run": 8
+    },
+    {
+      "mode": "cold-headed",
+      "task": "veto",
+      "ok": true,
+      "reason": "vetoed",
+      "steps": 0,
+      "task_ms": 715,
+      "total_ms": 2188,
+      "prompt_tokens": 453,
+      "completion_tokens": 26,
+      "trail": [],
+      "error": "Subscribe",
+      "run": 9
     }
   ],
   "summary": [
@@ -2514,72 +2994,6 @@
       "median_total_s": 0.28,
       "median_open_close_s": 0.0,
       "median_local_planner_tokens": 479.0,
-      "first_run_total_s": null
-    },
-    {
-      "mode": "cold-headless",
-      "task": "one-hop",
-      "runs": 5,
-      "pass_rate": "5/5",
-      "median_task_s": 1.09,
-      "median_total_s": 16.92,
-      "median_open_close_s": 15.78,
-      "median_local_planner_tokens": 479,
-      "first_run_total_s": 18.12
-    },
-    {
-      "mode": "cold-headless",
-      "task": "two-hop",
-      "runs": 5,
-      "pass_rate": "5/5",
-      "median_task_s": 1.03,
-      "median_total_s": 16.68,
-      "median_open_close_s": 15.7,
-      "median_local_planner_tokens": 488,
-      "first_run_total_s": null
-    },
-    {
-      "mode": "cold-headless",
-      "task": "veto",
-      "runs": 5,
-      "pass_rate": "5/5",
-      "median_task_s": 0.83,
-      "median_total_s": 16.52,
-      "median_open_close_s": 15.68,
-      "median_local_planner_tokens": 479,
-      "first_run_total_s": null
-    },
-    {
-      "mode": "cold-headed",
-      "task": "one-hop",
-      "runs": 5,
-      "pass_rate": "5/5",
-      "median_task_s": 0.93,
-      "median_total_s": 17.14,
-      "median_open_close_s": 16.25,
-      "median_local_planner_tokens": 479,
-      "first_run_total_s": 16.96
-    },
-    {
-      "mode": "cold-headed",
-      "task": "two-hop",
-      "runs": 5,
-      "pass_rate": "5/5",
-      "median_task_s": 1.12,
-      "median_total_s": 17.38,
-      "median_open_close_s": 16.23,
-      "median_local_planner_tokens": 488,
-      "first_run_total_s": null
-    },
-    {
-      "mode": "cold-headed",
-      "task": "veto",
-      "runs": 5,
-      "pass_rate": "5/5",
-      "median_task_s": 1.1,
-      "median_total_s": 17.22,
-      "median_open_close_s": 16.19,
-      "median_local_planner_tokens": 479,
       "first_run_total_s": null
     },
     {
@@ -2679,6 +3093,72 @@
       "median_total_s": 0.34,
       "median_open_close_s": 0.0,
       "median_local_planner_tokens": 479,
+      "first_run_total_s": null
+    },
+    {
+      "mode": "cold-headless",
+      "task": "one-hop",
+      "runs": 10,
+      "pass_rate": "10/10",
+      "median_task_s": 0.74,
+      "median_total_s": 1.68,
+      "median_open_close_s": 0.94,
+      "median_local_planner_tokens": 479.0,
+      "first_run_total_s": 2.38
+    },
+    {
+      "mode": "cold-headless",
+      "task": "two-hop",
+      "runs": 10,
+      "pass_rate": "10/10",
+      "median_task_s": 0.94,
+      "median_total_s": 1.86,
+      "median_open_close_s": 0.92,
+      "median_local_planner_tokens": 488.0,
+      "first_run_total_s": null
+    },
+    {
+      "mode": "cold-headless",
+      "task": "veto",
+      "runs": 10,
+      "pass_rate": "10/10",
+      "median_task_s": 0.71,
+      "median_total_s": 1.62,
+      "median_open_close_s": 0.91,
+      "median_local_planner_tokens": 479.0,
+      "first_run_total_s": null
+    },
+    {
+      "mode": "cold-headed",
+      "task": "one-hop",
+      "runs": 10,
+      "pass_rate": "10/10",
+      "median_task_s": 0.73,
+      "median_total_s": 2.2,
+      "median_open_close_s": 1.48,
+      "median_local_planner_tokens": 479.0,
+      "first_run_total_s": 1.94
+    },
+    {
+      "mode": "cold-headed",
+      "task": "two-hop",
+      "runs": 10,
+      "pass_rate": "10/10",
+      "median_task_s": 0.9,
+      "median_total_s": 2.28,
+      "median_open_close_s": 1.37,
+      "median_local_planner_tokens": 488.0,
+      "first_run_total_s": null
+    },
+    {
+      "mode": "cold-headed",
+      "task": "veto",
+      "runs": 10,
+      "pass_rate": "10/10",
+      "median_task_s": 0.73,
+      "median_total_s": 2.17,
+      "median_open_close_s": 1.42,
+      "median_local_planner_tokens": 479.0,
       "first_run_total_s": null
     }
   ]
