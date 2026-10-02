@@ -52,7 +52,7 @@ Each step:
 | Memory | Roughly the model size while loaded (not measured) | Ollama keeps it resident for a while after a run |
 | Disk | 2.5 GB for the model | One time, at `ollama pull` |
 | Local planner tokens | About 480 per run (see [Benchmark](#benchmark)) | One planner call per run, measured |
-| Step time | Well under 1 s per step on the local fixture | See [Benchmark](#benchmark) |
+| Run time | 0.3 to 0.5 s with a browser already open, about 17 s when it starts and stops Chrome each run | See [Benchmark](#benchmark) |
 | Network | Only the page load itself | No data is sent to any service |
 | Chrome | One background tab | The tool opens its own tab and never touches yours |
 | Delay between profiles | 8 to 25 seconds, randomized | Deliberately slow to protect the account, do not shorten |
@@ -67,39 +67,67 @@ Compared with screenshot-based automation: that approach sends an image of every
 
 ## Benchmark
 
-`bench.py` runs three tasks against a small local site (no internet, no logins), 10 runs each, in headless isolated Chrome. A local proxy sits between the planner and Ollama and sums the `usage` field of every response, so token numbers are measured, not guessed.
+`bench.py` runs three tasks against a small local site (no internet, no logins) in six browser situations. A local proxy sits between the planner and Ollama and sums the `usage` field of every response, so token numbers are measured, not guessed. Raw rows: `bench_results.json`.
 
-Measured on 2026-10-02, model `qwen3:4b-instruct-2507-q4_K_M`, local Laya sidecar:
+Measured on 2026-10-02, model `qwen3:4b-instruct-2507-q4_K_M`, local Laya sidecar, macOS. Cold modes ran 5 times per task, warm modes 10 times. Every run passed (the veto task passes only when the run ends with `reason: vetoed` and no click was made).
 
-| Task | Goal | Pass | Median steps | Median wall time | Local planner tokens (median) | External API tokens |
-|---|---|---|---|---|---|---|
-| one-hop | Open the pricing page | 10/10 | 1 | 0.81 s | 479 | 0 |
-| two-hop | Open the quickstart guide inside the docs | 10/10 | 3 | 0.96 s | 488 | 0 |
-| veto | Subscribe to the newsletter (must be stopped) | 10/10 vetoed | 0 | 0.78 s | 479 | 0 |
+Terms:
 
-Reading the numbers:
+- **Cold**: fastbrowse starts Chrome, runs the task, then shuts everything down, on every run. This is what `--isolated` does when you run a command.
+- **Warm**: Chrome is already running and the run only attaches to it. This is the case when you keep a Chrome open (your own, or a long-lived `--isolated --profile` Chrome kept up by your own script).
+- **Headless / headed**: no window / a visible window.
+- **New tab / same tab**: fastbrowse opens a fresh background tab per run (library default) / reuses one tab and only navigates it (the benchmark patches the library to measure this).
 
-- The local model is called once per run (about 455 prompt and 26 to 31 completion tokens). Each step's element choice is made by the local Laya sidecar, so extra steps did not add LLM tokens in these runs.
-- Wall time includes starting and stopping headless Chrome.
-- The first run after Ollama has been idle was slower (one trial run took 8 s to load the model). The table above is steady state.
-- The veto task is a pass only when the run ends with `reason: vetoed` and no click was made.
+All times are medians of the full run, including browser start and shutdown where they apply.
+
+| Situation | one-hop | two-hop | veto | Of which open + close |
+|---|---|---|---|---|
+| Cold, headless | 16.92 s | 16.68 s | 16.52 s | about 15.7 s |
+| Cold, headed | 17.14 s | 17.38 s | 17.22 s | about 16.2 s |
+| Warm, headless, new tab | 0.30 s | 0.51 s | 0.28 s | 0 |
+| Warm, headed, new tab | 0.30 s | 0.49 s | 0.28 s | 0 |
+| Warm, headless, same tab | 0.28 s | 0.47 s | 0.27 s | 0 |
+| Warm, headed, same tab | 0.27 s | 0.47 s | 0.27 s | 0 |
+
+First run (the first task after the situation starts, so it pays one-time setup):
+
+| Situation | First run |
+|---|---|
+| Cold, headless | 18.12 s |
+| Cold, headed | 16.96 s |
+| Warm, headless, new tab | 1.77 s |
+| Warm, headed, new tab | 0.84 s |
+| Warm, headless, same tab | 1.82 s |
+| Warm, headed, same tab | 1.14 s |
+| Warm, headless, Ollama model unloaded first (1 run) | 4.18 s, then 0.52 s and 0.34 s |
+
+What the numbers say:
+
+- **Opening and closing the browser is the whole cost.** Cold runs take about 17 s, warm runs 0.3 to 0.5 s. The task itself is the same size either way.
+- **The 15 seconds is not Chrome.** Chrome starts in about 0.3 to 0.7 s and exits in under 0.1 s. The time goes to `reset_daemon()` stopping the browser-harness daemon after a live session (measured: 15.28 s). That is a cost of the current teardown code, so a long-lived browser avoids it entirely.
+- **Headless vs headed:** no meaningful difference when warm (0.30 s vs 0.30 s). Cold headed was about 0.2 to 0.7 s slower.
+- **New tab vs same tab:** reusing the tab saves about 0.02 to 0.04 s per run. The library opens a background tab each run, and that is cheap, so it is not worth patching.
+- **First run:** warm first runs are 0.8 to 1.8 s because of one-time warmup. If Ollama had unloaded the model, the first run took 4.18 s to load it again (one measurement, not a statistic).
+- **Tokens:** the local model is called once per run, about 455 prompt and 26 to 31 completion tokens (median 479 / 488 total). Each step's element choice is made by the local Laya sidecar, so extra steps did not add LLM tokens. External API tokens: 0.
 
 ### fastbrowse vs Claude in Chrome
 
-Same fixture site, same two tasks, same machine, 2026-10-02. Claude in Chrome was driven by an agent with its screenshot path (screenshot at 0.5 scale, click by coordinates, verify with `get_page_text`). Raw rows: `bench_claude_in_chrome.json`.
+Same fixture site, same two tasks, same machine, 2026-10-02. Claude in Chrome was driven by an agent with its screenshot path (screenshot at 0.5 scale, click by coordinates, verify with `get_page_text`) in an already open Chrome. Raw rows: `bench_claude_in_chrome.json`.
 
-| | fastbrowse | Claude in Chrome |
-|---|---|---|
-| one-hop, median wall time | 0.81 s (10 runs) | 7.33 s (3 runs) |
-| two-hop, median wall time | 0.96 s (10 runs) | 10.80 s (3 runs) |
-| one-hop, tool calls / model turns | in-process, 1 planner call | 4 calls / 2 turns |
-| two-hop, tool calls / model turns | in-process, 1 planner call | 6 calls / 3 turns |
-| one-hop, tokens | 479 local, 0 external | about 542 in tool results (estimate), billed |
-| two-hop, tokens | 488 local, 0 external | about 951 in tool results (estimate), billed |
-| Pass rate on the tasks | 10/10 and 10/10 | 3/3 and 3/3 by screenshot path |
-| Stops dangerous clicks before they happen | Yes (veto) | No built-in veto |
+The fair comparison for Claude in Chrome is the warm case, because its Chrome was already open. Cold fastbrowse is slower than Claude in Chrome because of the 15 s teardown.
 
-Speed: fastbrowse was about 9x faster on one-hop and about 11x on two-hop.
+| | fastbrowse warm | fastbrowse cold | Claude in Chrome |
+|---|---|---|---|
+| one-hop, median time | 0.30 s (10 runs) | 16.92 s (5 runs) | 7.33 s (3 runs) |
+| two-hop, median time | 0.51 s (10 runs) | 16.68 s (5 runs) | 10.80 s (3 runs) |
+| one-hop, tool calls / model turns | in-process, 1 planner call | same | 4 calls / 2 turns |
+| two-hop, tool calls / model turns | in-process, 1 planner call | same | 6 calls / 3 turns |
+| one-hop, tokens | 479 local, 0 external | same | about 542 in tool results (estimate), billed |
+| two-hop, tokens | 488 local, 0 external | same | about 951 in tool results (estimate), billed |
+| Pass rate | 10/10 and 10/10 | 5/5 and 5/5 | 3/3 and 3/3 by screenshot path |
+| Stops dangerous clicks before they happen | Yes (veto) | Yes | No built-in veto |
+
+Speed when both browsers are already open: fastbrowse was about 24x faster on one-hop and about 21x on two-hop. When fastbrowse has to start and stop its own Chrome every run, Claude in Chrome was about 2.3x faster on one-hop and 1.5x on two-hop.
 
 How to read the token rows:
 
@@ -109,14 +137,13 @@ How to read the token rows:
 
 What the Claude in Chrome runs showed beyond the numbers:
 
-- The `find` plus click-by-`ref` path reported "Clicked" twice and the page did not navigate either time (0 of 2). One read in the middle of that failed because the extension disconnected. The coordinate path from a screenshot worked every time (6 of 6).
+- The `find` plus click-by-`ref` path reported "Clicked" twice and the page did not navigate either time (0 of 2). One read in the middle of that failed because the extension disconnected. The coordinate path from a screenshot worked every time (6 of 6 timed runs).
 - A click result does not confirm the navigation. The tab info in the result was stale, so every run needed a separate read to verify.
 
 Fairness notes:
 
-- Claude in Chrome wall time includes the agent's model round trips, which is what an agent loop really costs. fastbrowse plans in-process.
-- fastbrowse wall time includes starting and stopping headless Chrome. Claude in Chrome used an already open Chrome.
-- 10 runs vs 3 runs, on a tiny local page. Treat the ratios as an order of magnitude, not a precise figure.
+- Claude in Chrome time includes the agent's model round trips, which is what an agent loop really costs. fastbrowse plans in-process.
+- 10 or 5 runs vs 3 runs, on a tiny local page. Treat the ratios as an order of magnitude, not a precise figure.
 - Claude in Chrome is the better tool when you need screenshots, complex pages, uploads or a side effect on purpose. fastbrowse is for fast, read-first, vetoable work.
 
 To reproduce the Claude in Chrome side: serve the fixture with `uv run python -c "import bench,time; bench.serve(bench.Site,8791); time.sleep(900)"`, then run each task through the Claude in Chrome tools while stamping `date +%s%N` before and after.
@@ -125,15 +152,17 @@ Limits of this benchmark:
 
 - The fixture site is tiny. Real pages have far more elements, so planner prompts and step times grow.
 - In trial runs, a plain `<button>` with a click handler was never picked by the chooser (0 of 4 runs), while a link labelled Subscribe was and got vetoed. Do not rely on the veto for buttons the chooser cannot see.
-- Three tasks is a smoke benchmark, not a statistical study.
+- Three tasks is a smoke benchmark, not a statistical study. The model-unloaded first run is a single measurement.
+- Memory use was not measured.
 
 Reproduce it:
 
 ```bash
 uv run python bench.py --runs 10
+uv run python bench.py --runs 1 --modes warm-headless --unload-model
 ```
 
-Raw rows and the summary are written to `bench_results.json`. Requirements: Ollama running with the model pulled, the Laya sidecar on port 8765, and Chrome installed.
+The first command runs all six situations and writes `bench_results.json` (cold modes take about a minute per 3 runs). The second measures the first run after unloading the model. Requirements: Ollama running with the model pulled, the Laya sidecar on port 8765, and Chrome installed.
 
 ## Requirements
 
